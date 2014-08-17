@@ -19,5 +19,8 @@ module.exports = (robot) ->
   robot.respond /TIME$/i, (msg) ->
     msg.send "Server time is: #{new Date()}"
 
+  robot.respond /(Where you are|どこにいるの) ?(\?|？)$/i, (msg) ->
+    msg.send 'https://github.com/bugcloud/matsuri-bot'
+
   robot.hear ///#{robot.name}///i, (msg) ->
     msg.send "ほい、#{msg.message.user.name}さん"
